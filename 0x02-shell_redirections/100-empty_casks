@@ -1,2 +1,2 @@
 #!/bin/bash
-find 0x02-shell_redirections -empty -ls al 
+find . –type d -empty ls -al
