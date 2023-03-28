@@ -1,6 +1,6 @@
-#manifest that installs a package
+# Installs flask
 
-package {'flask':
-ensure => installed,
-source => 'N:/pip3/flask 2.1.0',
+package { 'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3',
 }
