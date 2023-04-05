@@ -27,4 +27,4 @@ echo "server {
 " > /etc/nginx/sites-available/default
 
 # Restart Nginx
-service nginx restart
+nginx -s reload
