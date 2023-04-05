@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+string_to_replace="server_name _;\n\nlocation\/redirect_me {\n\treturn 301 https:\/\/www.facebook.com;\n}"
+
+sudo sed -i "s/server_name _;/$string_to_replace/" /etc/nginx/sites-enabled/default
+
+service nginx restart
