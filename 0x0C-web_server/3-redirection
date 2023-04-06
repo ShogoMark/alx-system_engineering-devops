@@ -8,7 +8,7 @@ sudo apt-get install -y nginx
 
 #add the following configuration to the existing server block
 string_to_replace="server_name _;\n\nlocation\/redirect_me {\n\treturn 301 https:\/\/www.google.com;\n}"
-sudo sed -i "s/server_name _;"/"$string_to_replace/g" /etc/nginx/sites-enabled/default
+sudo sed -i s/"server_name _;"/"$string_to_replace"/g /etc/nginx/sites-enabled/default
 
 #Restart Nginx
 service nginx restart
