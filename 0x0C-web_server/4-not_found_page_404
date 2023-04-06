@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Configure Nginx server so that /redirect_me is redirecting to another page
+
+#Install nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
+
+
+#add the following configuration to the existing server block
+string_to_replace="server_name _;\n\terror_page 404 \/404.html;\nlocation = \/404.html {\n\t\troot \/etc\/nginx\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/server_name _;/$string_to_replace/" /etc/nginx/sites-enabled/default
+
+#Restart Nginx
+service nginx restart
