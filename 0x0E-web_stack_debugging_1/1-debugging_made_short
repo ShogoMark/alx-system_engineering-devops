@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Resolve port listening issues
+
+cp -r /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
+
+pkill nginx
