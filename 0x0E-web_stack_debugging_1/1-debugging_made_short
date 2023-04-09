@@ -5,4 +5,4 @@ cp -r /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
 
-pkill nginx
+pkill -o nginx
