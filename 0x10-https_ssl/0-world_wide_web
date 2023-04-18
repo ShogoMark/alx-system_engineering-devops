@@ -4,7 +4,7 @@
 web ()
 {
 	result=$(dig "$2.$1" | grep -A1 "ANSWER SECTION:" | tail -1)
-	echo "$2 $result" | awk '{print "The subdomain " $1 " is a  " $5 " record and points to " $6 }' 
+	echo "$2 $result" | awk '{print "The subdomain " $1 " is a " $5 " record and points to " $6}' 
 }
 
 if [ "$#" -eq 1 ]
