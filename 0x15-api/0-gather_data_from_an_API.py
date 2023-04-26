@@ -8,8 +8,7 @@ if __name__ == "__main__":
 
     # API request to get employee information
     url = 'https://jsonplaceholder.typicode.com/'
-    emp_res = '{}users/{}'.format(url, sys.argv[1])
-    emp_data = requests.get(emp_res)
+    emp_data = requests.get('{}users/{}'.format(url, sys.argv[1]))
     j_res = emp_data.json()
 
     print("Employee {} is done with tasks".format(j_res.get('name')), end="")
