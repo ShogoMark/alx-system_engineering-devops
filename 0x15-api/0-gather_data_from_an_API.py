@@ -10,10 +10,9 @@ if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/'
     emp_res = '{}users/{}'.format(url, sys.argv[1])
     emp_data = requests.get(emp_res)
-    json_res = emp_data.json()
+    j_res = emp_data.json()
 
-    print("Employee {} is done with tasks".format(json_res.get('name')),
-						  end="")
+    print("Employee {} is done with tasks".format(j_res.get('name')), end="")
 
     # API request to get employee to-do list
     emp_todo = '{}todos?userId={}'.format(url, sys.argv[1])
