@@ -6,20 +6,24 @@ import sys
 
 if __name__ == "__main__":
 
-# API request to get employee information
-	emp_res = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1]))
-	emp_data = emp_res.json()
+    # API request to get employee information
+    url = 'https://jsonplaceholder.typicode.com/'
+    emp_res = '{}users/{}'.format(url, sys.argv[1])
+    emp_data = requests.get(emp_res)
+    json_res = emp_data.json()
 
-	print("Employee {} is done with tasks".format(emp_data.get('name')), end="")
+    print("Employee {} is done with tasks"
+	.format(json_res.get('name')), end="")
 
 # API request to get employee to-do list
-	emp_todo = requests.get("https://jsonplaceholder.typicode.com/todos/{}".format(sys.argv[1]))
-	todo_data = emp_todo.json()
+	emp_todo = '{}todos?userId={}'.format(sys.argv[1])
+	todo_data = requests.get(emp_todo)
+	total_task = todo_data.json()
 	completed_task = []
-	for task in todo_data:
-		if task['completed'] is 'true':
+	for task in total_task:
+		if task.get('completed') is True:
 			completed_task.append(task)
 
-	print("({}/{}):".format(len(completed_task), len(todo_data)))
+	print("({}/{}):".format(len(completed_task), len(total_task)))
 	for task in completed_task:
 		print("\t {}".format(task.get('title')))
