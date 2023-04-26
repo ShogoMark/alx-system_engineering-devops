@@ -12,8 +12,8 @@ if __name__ == "__main__":
     emp_data = requests.get(emp_res)
     json_res = emp_data.json()
 
-    print("Employee {} is done with tasks".format(json_res.get('name')), 
-                                                  end="")
+    print("Employee {} is done with tasks".format(json_res.get('name')),
+						  end="")
 
     # API request to get employee to-do list
     emp_todo = '{}todos?userId={}'.format(url, sys.argv[1])
