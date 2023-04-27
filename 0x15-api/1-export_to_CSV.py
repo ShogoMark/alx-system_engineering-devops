@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
         for task in j_task:
             values = [sys.argv[1], j_res.get('username'),
-                     task['completed'], task['title']]
+                      task['completed'], task['title']]
             writer.writerow(values)
