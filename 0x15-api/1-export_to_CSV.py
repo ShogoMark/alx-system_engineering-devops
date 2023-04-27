@@ -21,5 +21,6 @@ if __name__ == "__main__":
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
 
         for task in j_task:
-            values = [sys.argv[1], j_res.get('username'), task['completed'], task['title']]
+            values = [sys.argv[1], j_res.get('username'), 
+                task['completed'], task['title']]
             writer.writerow(values)
