@@ -17,8 +17,9 @@ if __name__ == "__main__":
     emp_task = requests.get('{}todos?userId={}'.format(url, sys.argv[1]))
     j_task = emp_task.json()
     filename = "{}.csv".format(sys.argv[1])
-    with open(filename, 'w', newline="") as csvfile:
-        writer = csv.writer(csvfile)
+    with open(filename, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTEALL)
+
         for task in j_task:
-            value = [j_res.get('id'), j_res.get('username'), task['completed'], task['title']]
-            writer.writerow(value)
+            values = [j_res.get('id'), j_res.get('username'), task['completed'], task['title']]
+            writer.writerow(values)
