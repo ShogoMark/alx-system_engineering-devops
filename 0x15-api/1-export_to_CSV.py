@@ -18,7 +18,7 @@ if __name__ == "__main__":
     j_task = emp_task.json()
     filename = "{}.csv".format(sys.argv[1])
     with open(filename, 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTEALL)
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
 
         for task in j_task:
             values = [sys.argv[1], j_res.get('username'), task['completed'], task['title']]
