@@ -21,10 +21,10 @@ if __name__ == "__main__":
 
     res = {
           user.get("id"): [{"username": user.get("username"),
-                          "task": todo.get("title"),
-                          "completed": todo.get("completed")}
-                         for todo in todos
-                         if todo.get("userId") == user.get("id")]
+                            "task": todo.get("title"),
+                            "completed": todo.get("completed")}
+                           for todo in todos
+                           if todo.get("userId") == user.get("id")]
           for user in users
      }
     filename = 'todo_all_employee.json'
