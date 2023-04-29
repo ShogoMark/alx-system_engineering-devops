@@ -27,6 +27,6 @@ if __name__ == "__main__":
                            if todo.get("userId") == user.get("id")]
           for user in users
      }
-    filename = 'todo_all_employee.json'
-    with open(filename, 'w') as json_file:
+    
+    with open("todo_all_employees.json", "w", newline="") as json_file:
         json.dump(res, json_file)
