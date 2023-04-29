@@ -13,12 +13,12 @@ if __name__ == "__main__":
 
     # API request to get employee information
     emp_data = requests.get('{}users'.format(url))
-    username = emp_data.json()
+    users = emp_data.json()
 
     emp_task = requests.get('{}todos'.format(url))
     todos = emp_task.json()
 
-    res = [{requests.get("userId"): [{"username": requests.get("username"), "task": [task["title"]], "completed": [task["completed"]]} for task in todos]} for users in username]
-    print(res)
-   #  with open(todo_all_employees.json, 'w') as json_file:
-    #    json.dump({sys.argv[1]: all_task}, json_file)
+    res = [{user['id']: [{"username": user["username"], "task": [todo["title"]], "completed": [todo["completed"]]} for todo in todos]} for user in users]
+    filename = 'todo_all_employee.json'
+    with open(filename, 'w') as json_file:
+        json.dump(json.loads(res), json_file)
