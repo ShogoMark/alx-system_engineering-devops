@@ -19,10 +19,10 @@ if __name__ == "__main__":
     emp_task = requests.get('{}todos'.format(url))
     todos = emp_task.json()
 
-    res = [{user['id']: [{"username": user["username"], 
+    res = [{user['id']: [{"username": user["username"],
                           "task": [todo["title"]],
                           "completed": [todo["completed"]]}
-                          for todo in todos]} for user in users]
+                         for todo in todos]} for user in users]
     filename = 'todo_all_employee.json'
     with open(filename, 'w') as json_file:
         json.dump(res, json_file)
