@@ -21,4 +21,4 @@ if __name__ == "__main__":
     res = [{user['id']: [{"username": user["username"], "task": [todo["title"]], "completed": [todo["completed"]]} for todo in todos]} for user in users]
     filename = 'todo_all_employee.json'
     with open(filename, 'w') as json_file:
-        json.dump(json.loads(res), json_file)
+        json.dump(res, json_file)
