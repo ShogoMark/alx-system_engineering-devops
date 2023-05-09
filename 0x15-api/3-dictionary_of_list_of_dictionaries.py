@@ -6,6 +6,7 @@ import json
 import requests
 import sys
 
+
 if __name__ == "__main__":
 
     # API request to get employee information
@@ -13,12 +14,18 @@ if __name__ == "__main__":
 
     # API request to get employee information
     emp_data = requests.get('{}users'.format(url))
-    username = emp_data.json()
+    users = emp_data.json()
 
     emp_task = requests.get('{}todos'.format(url))
     todos = emp_task.json()
 
-    res = [{requests.get("userId"): [{"username": requests.get("username"), "task": [task["title"]], "completed": [task["completed"]]} for task in todos]} for users in username]
-    print(res)
-   #  with open(todo_all_employees.json, 'w') as json_file:
-    #    json.dump({sys.argv[1]: all_task}, json_file)
+    res = {
+          user.get("id"): [{"username": user.get("username"),
+                            "task": todo.get("title"),
+                            "completed": todo.get("completed")}
+                           for todo in todos
+                           if todo.get("userId") == user.get("id")]
+          for user in users
+     }
+    with open("todo_all_employees.json", "w", newline="") as json_file:
+        json.dump(res, json_file)
