@@ -8,7 +8,6 @@ import sys
 
 def top_ten(subreddit):
     """Function takes in one parameter"""
-    
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {"User-Agent": "Custom User Agent"}
 
