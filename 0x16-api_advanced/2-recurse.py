@@ -21,9 +21,9 @@ def recurse(subreddit, hot_list=[], after=None):
     response = requests.get(url, headers=headers, allow_redirects=False)
     
     if response.status_code == 200:
-       data  = response.json()['data']
-       articles = data['children']
-       for article in articles:
+        data  = response.json()['data']
+        articles = data['children']
+        for article in articles:
             list_title = article['data']['title']
             hot_list.append(list_title)
 
