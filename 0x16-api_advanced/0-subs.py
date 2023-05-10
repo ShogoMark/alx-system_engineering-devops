@@ -10,7 +10,7 @@ def number_of_subscribers(subreddit):
     """A function that takes in one parameter"""
     subreddit = sys.argv[1]
 
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddits)
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {"User-Agent": "Custom"}
     
     response = requests.get(url, headers=headers)
