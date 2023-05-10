@@ -7,8 +7,6 @@ import sys
 
 def number_of_subscribers(subreddit):
     """A function that takes in one parameter"""
-    subreddit = sys.argv[1];
-    
     
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agent": "Custom User Agent"}
