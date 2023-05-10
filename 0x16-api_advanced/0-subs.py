@@ -1,18 +1,12 @@
 #!/usr/bin/python3
-"""
-A function that queries 
-Reddit API returns no. of Subs
-"""
+"""A function that queries Reddit API returns no. of Subs"""
 
 import json
 import requests
 import sys
 
 def number_of_subscribers(subreddit):
-    """
-    A function that 
-    takes in one parameter
-    """
+    """A function that takes in one parameter"""
     
     url = "https://www.reddit.com/r/{}/about.json", format(subreddits)
     headers = {"User-Agent": "Custom User Agent"}
