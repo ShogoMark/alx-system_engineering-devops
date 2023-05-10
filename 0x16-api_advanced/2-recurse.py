@@ -10,7 +10,7 @@ def recurse(subreddit, hot_list=[], after=None):
     if after:
         url += f"?after={after}"
 
-    headers = {"User-Agent": "Custom User Agent"}
+    headers = {"User-Agent": "Chrome/88.0.4324.182 Safari/537.36"}
     response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
