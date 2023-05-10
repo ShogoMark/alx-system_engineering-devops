@@ -5,6 +5,7 @@ import json
 import requests
 import sys
 
+
 def number_of_subscribers(subreddit):
     """A function that takes in one parameter"""
     subreddit = sys.argv[1]
