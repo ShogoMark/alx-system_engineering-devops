@@ -21,9 +21,9 @@ def recurse(subreddit, hot_list=[], after=None):
             hot_list.append(list_title)
        print(len(hot_list))
 
-       #if data['after'] is not None:
-        #    return recurse(subreddit, hot_list, after=data['after'])
-    #else:
-      #  return None
+       if data['after'] is not None:
+            return recurse(subreddit, hot_list, after=data['after'])
+    else:
+        return None
 
-    #return hot_list
+    return hot_list
