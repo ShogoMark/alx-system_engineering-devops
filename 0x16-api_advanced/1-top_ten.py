@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """A function that queries Reddit API returns no. of Subs"""
 
+import json
 import requests
 import sys
 
+
 def top_ten(subreddit):
-    """function takes in one parameter"""
+    """Function takes in one parameter"""
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
     headers = {"User-Agent": "Custom User Agent"}
