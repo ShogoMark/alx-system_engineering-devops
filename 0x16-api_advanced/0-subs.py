@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A function that queries Reddit API returns no. of Subs"""
 
+import json
 import requests
 import sys
 
