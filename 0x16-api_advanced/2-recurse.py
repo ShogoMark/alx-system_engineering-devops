@@ -5,8 +5,10 @@ import json
 import requests
 import sys
 
+
 def recurse(subreddit, hot_list=[], after=None):
-    """function takes in one parameter"""
+"""A function takes in one parameter"""
+
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     if after:
         url += f"&after={after}"
@@ -19,7 +21,6 @@ def recurse(subreddit, hot_list=[], after=None):
        for article in articles:
             list_title = article['data']['title']
             hot_list.append(list_title)
-       print(len(hot_list))
 
        if data['after'] is not None:
             return recurse(subreddit, hot_list, after=data['after'])
