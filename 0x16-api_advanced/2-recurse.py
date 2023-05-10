@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Recursively gets data from an API"""
+
 import requests
 
 
