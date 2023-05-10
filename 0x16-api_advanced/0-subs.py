@@ -5,7 +5,7 @@ import requests
 import sys
 
 def number_of_subscribers(subreddit):
-    """function takes in one parameter"""
+"""function takes in one parameter"""
     subreddit = sys.argv[1];
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
