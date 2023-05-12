@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Function to query a list of all hot posts for a given subreddit"""
+"""
+Recurse() - Function to query a list of
+all hot posts for a given subreddit
+"""
 
 import requests
 
