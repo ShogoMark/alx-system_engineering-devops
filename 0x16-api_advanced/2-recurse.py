@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Function to query a list of all hot posts for a given Reddit subreddit"""
+"""Function to query a list of all hot posts for a given subreddit"""
+
 import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
-    """A function takes in one parameter"""
 
+    """A function takes in one parameter"""
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     if after:
         url += f"?after={after}"
