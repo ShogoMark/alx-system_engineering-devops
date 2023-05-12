@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Recursively gets data from an API"""
-
+"""Function to query a list of all hot posts for a given Reddit subreddit"""
 import requests
 
 
